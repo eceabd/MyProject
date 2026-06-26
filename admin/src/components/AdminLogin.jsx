@@ -7,7 +7,7 @@ const AdminLogin = () => {
     const[email,setEmail]=useState("")
     const[password,setPassword]=useState("")
     const navigate=useNavigate()
-    const url = "http://localhost:7777/api/admin/login"
+    const url = "https://myproject-o6u3.onrender.com"
     useEffect(()=>{
       const token = localStorage.getItem("adminToken")
       if(token){

@@ -6,7 +6,7 @@ import { useEffect } from "react"
 const Orders = () => {
     const [orders,setOrders] = useState([])
     const [loading,setLoading] = useState(false)
-    const url = "http://localhost:7777"
+    const url = "https://myproject-o6u3.onrender.com"
 
     const fetchOrders = async () => {
         try{

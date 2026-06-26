@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 const List = () => {
     const[products,setProducts] = useState([])
-    const url = "http://localhost:7777"
+    const url = "https://myproject-o6u3.onrender.com"
 
 
     const fetchProducts = async()=>{

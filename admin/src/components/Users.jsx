@@ -3,7 +3,7 @@ import axios from "axios"
 import { useEffect } from "react";
 import {Shield, Trash, User} from "lucide-react" 
 const Users = () => {
-  const url = "http://localhost:7777";
+  const url = "https://myproject-o6u3.onrender.com";
   const [users,setUsers] = useState([])
   const [isLoading,setIsLoading] = useState(true)
 

@@ -3,7 +3,7 @@ import axios from "axios"
 const Add = () => {
     const [image,SetImage] = useState()
     const [data,setData] = useState({name:"", description:"", price:"", category:""})
-    const url = "http://localhost:7777"
+    const url = "https://myproject-o6u3.onrender.com"
     const OnChangeHandler = (event) => {
         const {name , value} = event.target
         setData((prev)=>({...prev , [name]:value}))

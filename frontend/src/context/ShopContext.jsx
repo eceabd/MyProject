@@ -13,7 +13,7 @@ const ShopContextProvider = ({children}) => {
 
       }
     })
-    const url ="http://localhost:7777"
+    const url ="https://myproject-o6u3.onrender.com"
     const [token,setToken]=useState("")
     const [products,setProducts] = useState([])
     
