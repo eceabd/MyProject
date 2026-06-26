@@ -9,7 +9,7 @@ import cartRouter from "./routes/cartRoutes.js"
 
 const app = express()
 app.use(express.json())
-const PORT = 7777;
+const PORT = process.env.PORT || 7777;
 app.use(cors()) 
 
 app.use((req,res,next) => {
