@@ -10,7 +10,10 @@ import cartRouter from "./routes/cartRoutes.js"
 const app = express()
 app.use(express.json())
 const PORT = process.env.PORT || 7777;
-app.use(cors()) 
+app.use(cors({
+    origin: "https://my-project.netlify.app",
+    credentials: true
+})) 
 
 app.use((req,res,next) => {
     console.log(`new request : ${req.method} on route: ${req.originalUrl}`)
