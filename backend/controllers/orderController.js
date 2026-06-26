@@ -5,7 +5,7 @@ import orderModel from "../models/orderModel.js";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export const placeOrder = async (req,res) => {
-    const frontend_url = "http://localhost:5151";
+    const frontend_url = "https://golden-pithivier-e9f8a1.netlify.app";
     
     try{
         const userId = req.body.userId || req.userId;
