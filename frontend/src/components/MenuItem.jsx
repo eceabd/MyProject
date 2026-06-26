@@ -1,4 +1,4 @@
-import { FolderOpen, Home, Mail, ShoppingCart, User } from 'lucide-react'
+import { BellRing, FolderOpen, Home, Mail, ShoppingCart, User } from 'lucide-react'
 import { useContext, useState } from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
@@ -51,6 +51,10 @@ const MenuItem = ({setSidebarOpen, isMobile}) => {
         </button>
        )
       )}
+      <button onClick={()=>navigate("/myorders")} className='flex items-center gap-3 px-4 py-3 rounded-lg h-8.75 transition-all shrink-0 w-auto min-w-20 text-gray-200 hover:bg-white/10 hover:text-white hover:shadow-md font-semibold text-base'>
+        <BellRing className='w-6 h-6'/>
+        مشترياتي
+      </button>
          <button onClick={()=>{
           navigate("/cart")
           setSidebarOpen && setSidebarOpen(false)}}
