@@ -1,25 +1,29 @@
-import express from "express"
-import cors from "cors"
-import connectDB from "./config/db.js"
-import userRouter from "./routes/userRoutes.js"
-import orderRouter from "./routes/orderRoutes.js"
-import adminRouter from "./routes/adminRoutes.js"
-import productRouter from "./routes/productRoutes.js"
-import cartRouter from "./routes/cartRoutes.js"
+import express from "express";
+import cors from "cors";
+import connectDB from "./config/db.js";
+import userRouter from "./routes/userRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
+import adminRouter from "./routes/adminRoutes.js";
+import productRouter from "./routes/productRoutes.js";
+import cartRouter from "./routes/cartRoutes.js";
 
-const app = express()
-app.use(express.json())
+const app = express();
+app.use(express.json());
 const PORT = process.env.PORT || 7777;
-app.use(cors({
-    origin: "https://golden-pithivier-e9f8a1.netlify.app",
-    credentials: true
-})) 
+app.use(
+  cors({
+    origin: [
+      "https://golden-pithivier-e9f8a1.netlify.app",
+      "https://jovial-arithmetic-c76c25.netlify.app",
+    ],
+    credentials: true,
+  }),
+);
 
-app.use((req,res,next) => {
-    console.log(`new request : ${req.method} on route: ${req.originalUrl}`)
-    next()
-})
-
+app.use((req, res, next) => {
+  console.log(`new request : ${req.method} on route: ${req.originalUrl}`);
+  next();
+});
 
 // Routes
 app.use("/image", express.static("uploads"));
@@ -29,14 +33,14 @@ app.use("/api/product", productRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/admin", adminRouter);
 
-app.get("/" , (req,res)=>{
-    res.send("API Working!!")
-})
+app.get("/", (req, res) => {
+  res.send("API Working!!");
+});
 
-const startServer = async ()=> {
-      await connectDB();
-    app.listen(PORT, ()=>{
-        console.log(`server is running ${PORT}.......`)
-    })
-}
-startServer()
+const startServer = async () => {
+  await connectDB();
+  app.listen(PORT, () => {
+    console.log(`server is running ${PORT}.......`);
+  });
+};
+startServer();
