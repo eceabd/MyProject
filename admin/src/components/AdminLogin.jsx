@@ -18,7 +18,7 @@ const AdminLogin = () => {
     const handleSubmit = async(e)=>{
       e.preventDefault()
       try{
-        const {data} = await axios.post(url , {email, password})
+        const {data} = await axios.post(url+"/api/admin/login" , {email, password})
         if(data.success){
           localStorage.setItem("adminToken" , data.token)
           navigate("/admin/list")
