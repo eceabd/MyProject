@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       "https://golden-pithivier-e9f8a1.netlify.app",
-      "https://jovial-arithmetic-c76c25.netlify.app",
+      "https://myproject-1-yrtl.onrender.com",
     ],
     credentials: true,
   }),
